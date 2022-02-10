@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1></h1>
+<p>
+    Input angka
+    <input type="text" id="input">
+
+</p>
+
+<button type="button"
+onclick="jmlKata()">
+process</button>
+
+<p id="demo"></p>
+
+</body>
+<script>
+    function jmlKata() {
+        input = document.getElementById('input').value;
+        const myArray = input.split(" ");
+        temp = myArray
+        // console.log(temp)
+        jml = 0
+        for (let i = 0; i < myArray.length; i++) {
+            //    console.log(temp)
+            const regex = new RegExp('foo*');
+            const globalRegex = new RegExp('foo*', 'g');
+            if(regex.test(myArray[i]) == false){
+                myArray.splice(i, 1); 
+            }
+        }
+        document.getElementById('demo').innerHTML = myArray.length
+}
+</script>
+</html> 
+

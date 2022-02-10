@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1></h1>
+<p>
+    Input angka
+    <input type="text" id="input">
+
+</p>
+
+<button type="button"
+onclick="KaosKaki()">
+process</button>
+
+<p id="demo"></p>
+
+</body>
+<script>
+    function KaosKaki() {
+        input = document.getElementById('input').value;
+        const myArray = input.split(",");
+        temp = myArray
+        // console.log(temp)
+        jml = 0
+        for (let i = 0; i < myArray.length; i++) {
+            //    console.log(temp)
+               for (let a = 0; a < temp.length; a++) {
+                 if(myArray[i] === temp[a] && i != a){
+                    //  console.log(myArray[i])
+                     temp.splice(a, 1); 
+                     jml = jml + 1
+                 }
+               }
+        }
+        document.getElementById('demo').innerHTML = jml
+}
+</script>
+</html> 
+
